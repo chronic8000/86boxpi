@@ -2,6 +2,10 @@
 
 This directory contains a complete toolchain to generate a custom Raspberry Pi OS image that boots directly into 86Box.
 
+## Download Pre-built Image
+Don't want to build it yourself? Download the latest pre-compiled image for Raspberry Pi 5 here:
+[Download 86Box Pi Appliance (Google Drive)](https://drive.google.com/file/d/1zFrmpkwZU72tUEtExmdRbPSTmDMlamTn/view?usp=sharing)
+
 ## Prerequisites
 - Windows 10/11 with WSL 2.0 (Ubuntu or Debian).
 - At least 15GB of free disk space (for Docker images and uncompressed filesystem).
