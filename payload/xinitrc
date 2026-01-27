@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# 1. Host Environment Setup
+xset s off      # Disable screensaver
+xset -dpms      # Disable power management
+xset s noblank  # Disable screen blanking
+
+# 2. Start the Window Manager
+# We use openbox for minimal overhead.
+openbox-session &
+
+# 3. Start the F8+F12 Interceptor Daemon
+# Must run as root for evdev access, or user needs input group permissions.
+# Ideally installed as a system service, but here we can try running it.
+# NOTE: input_daemon.py needs root to read /dev/input/* usually.
+# If we run it here as 'pi', we need to ensure 'pi' is in 'input' group.
+# For robustness, we might want to start input_daemon via a separate systemd service,
+# but for this script we will assumepermissions are set.
+/usr/local/bin/input_daemon.py &
+
+# 4. Start 86Box in a Loop
+# The loop ensures that if the user "Quits" 86Box, it just restarts,
+# effectively making "Shutdown" the only way out (via the menu).
+while true; do
+   # -P points to the VM config directory
+   # --fullscreen forces full screen
+   # We define the VM path. User must place config here.
+   mkdir -p /home/pi/vm/default
+   /usr/local/bin/86Box -P /home/pi/vm/default --fullscreen
+   sleep 1
+done

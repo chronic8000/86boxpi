@@ -1,0 +1,30 @@
+# Build Artifacts
+*.img
+*.img.xz
+*.iso
+*.vhd
+*.vhdx
+*.qcow2
+*.tar.gz
+*.tar.xz
+*.zip
+
+# Intermediate Build Files
+build_artifacts/
+kernel_qemu
+initrd_qemu
+kernel-qemu*
+kernel_generic*
+initrd_generic*
+qemu-test-copy.img
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Developer Tools
+.vscode/
+.idea/
+venv/
+__pycache__/
+*.pyc

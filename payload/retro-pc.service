@@ -1,0 +1,18 @@
+[Unit]
+Description=Retro PC Emulation Appliance
+After=network.target sound.target getty@tty1.service
+Conflicts=getty@tty1.service
+
+[Service]
+User=pi
+Group=pi
+Type=simple
+PAMName=login
+Environment=XDG_SESSION_TYPE=x11
+TTYPath=/dev/tty1
+ExecStart=/usr/bin/startx /home/pi/.xinitrc -- -nocursor -s 0 -dpms
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=graphical.target
