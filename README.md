@@ -46,3 +46,7 @@ Don't want to build it yourself? Download the latest pre-compiled image for Rasp
 
 ## Customization
 To add more ROMs or change default settings before building, edit the `scripts/compile_86box.sh` script or place files in the `payload/` directory and update `scripts/modify_image.sh` to copy them.
+
+Picture of it running on Pi4 port I still do not have a Pi5 :( -
+
+https://drive.google.com/file/d/1zcR1YFaaiojshSBRNxZMLZkawA-BHp0e/view?usp=sharing
